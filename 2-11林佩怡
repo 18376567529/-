@@ -1,0 +1,23 @@
+public class abc{
+public static void main(String args[]){
+int i;//定义i为整型
+abc t=new abc();
+int a=t.b(12);//定义一个函数
+System.out.println(a);//调用函数
+}
+int n=12;//输入要分解的整数
+int num=0;//定义num次数刚开始为0
+
+int b(int n)//调用函数b输入n
+{
+for(int i=2;i<n/2;i++)//定义i=2开始可以排除1*6的情况出现
+ {
+if((n%i)==0)//判断条件是否符合12的分解
+{
+num++;//符合条件次数加一
+b(n/i);
+}
+}//循环体结束跳出循环，然后输出整数可分解的种数
+return num+1;//输出种数，加一是为了加上12的那种情况，这里输出的的num为8种
+}
+}
